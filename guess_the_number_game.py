@@ -3,7 +3,12 @@ import random
 def guess_random_number ():
 
     max_value = int(input('最大値を入力してください\n'))
-    min_value = int(input('最小値を入力してください\n'))
+    while True:
+        min_value = int(input('最小値を入力してください\n'))
+        if max_value > min_value:
+            break
+        else:
+            print('最小値は最大値より小さくする必要があります。もう一度入力してください。')
 
     random_number = random.randint(min_value, max_value)
     attempt = 0
